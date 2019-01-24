@@ -13,12 +13,12 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@192.168.100.150 \'hostname\''
+                sh 'ssh root@192.168.100.150 \'yum -y install open-vm-tools\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh root@192.168.100.150 \'ifconfig\''
+                sh 'ssh root@192.168.100.150 \'systemctl status vmware-tools\''
             }
         }
     }
